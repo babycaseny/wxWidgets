@@ -1,4 +1,29 @@
-#ifdef __APPLE__
+/* libtiff/tif_config.h.  Generated from tif_config.h.in by configure.  */
+/* libtiff/tif_config.h.in.  Generated from configure.ac by autoheader.  */
+
+/* Define if building universal (internal helper macro) */
+/* #undef AC_APPLE_UNIVERSAL_BUILD */
+
+/* Support CCITT Group 3 & 4 algorithms */
+#define CCITT_SUPPORT 1
+
+/* Pick up YCbCr subsampling info from the JPEG data stream to support files
+   lacking the tag (default enabled). */
+#define CHECK_JPEG_YCBCR_SUBSAMPLING 1
+
+/* enable partial strip reading for large strips (experimental) */
+/* #undef CHUNKY_STRIP_READ_SUPPORT */
+
+/* Support C++ stream API (requires C++ compiler) */
+#define CXX_SUPPORT 1
+
+/* Treat extra sample as alpha (default enabled). The RGBA interface will
+   treat a fourth sample with no EXTRASAMPLE_ value as being ASSOCALPHA. Many
+   packages produce RGBA files but don't mark the alpha properly. */
+#define DEFAULT_EXTRASAMPLE_AS_ALPHA 1
+
+/* enable deferred strip/tile offset/size loading (experimental) */
+/* #undef DEFER_STRILE_LOAD */
 
 /* Define to 1 if you have the <assert.h> header file. */
 #define HAVE_ASSERT_H 1
@@ -16,16 +41,16 @@
 #define HAVE_GETOPT 1
 
 /* Define to 1 if you have the <GLUT/glut.h> header file. */
-#define HAVE_GLUT_GLUT_H 1
+/* #undef HAVE_GLUT_GLUT_H */
 
 /* Define to 1 if you have the <GL/glut.h> header file. */
-#define HAVE_GL_GLUT_H 1
+/* #undef HAVE_GL_GLUT_H */
 
 /* Define to 1 if you have the <GL/glu.h> header file. */
-#define HAVE_GL_GLU_H 1
+/* #undef HAVE_GL_GLU_H */
 
 /* Define to 1 if you have the <GL/gl.h> header file. */
-#define HAVE_GL_GL_H 1
+/* #undef HAVE_GL_GL_H */
 
 /* Define as 0 or 1 according to the floating point format suported by the
    machine */
@@ -56,13 +81,13 @@
 #define HAVE_LFIND 1
 
 /* Define to 1 if you have the `m' library (-lm). */
-/* #undef HAVE_LIBM */
+#define HAVE_LIBM 1
 
 /* Define to 1 if you have the <limits.h> header file. */
 #define HAVE_LIMITS_H 1
 
 /* Define to 1 if you have the <malloc.h> header file. */
-/* #undef HAVE_MALLOC_H */
+#define HAVE_MALLOC_H 1
 
 /* Define to 1 if you have the `memmove' function. */
 #define HAVE_MEMMOVE 1
@@ -77,10 +102,10 @@
 #define HAVE_MMAP 1
 
 /* Define to 1 if you have the <OpenGL/glu.h> header file. */
-#define HAVE_OPENGL_GLU_H 1
+/* #undef HAVE_OPENGL_GLU_H */
 
 /* Define to 1 if you have the <OpenGL/gl.h> header file. */
-#define HAVE_OPENGL_GL_H 1
+/* #undef HAVE_OPENGL_GL_H */
 
 /* Define to 1 if you have the `pow' function. */
 #define HAVE_POW 1
@@ -92,7 +117,7 @@
 #define HAVE_SEARCH_H 1
 
 /* Define to 1 if you have the `setmode' function. */
-#define HAVE_SETMODE 1
+/* #undef HAVE_SETMODE */
 
 /* Define to 1 if you have the `sqrt' function. */
 #define HAVE_SQRT 1
@@ -148,29 +173,12 @@
 /* Define to 1 if you have the <windows.h> header file. */
 /* #undef HAVE_WINDOWS_H */
 
-#ifdef __BIG_ENDIAN__
-    /* Set the native cpu bit order */
-    #define HOST_FILLORDER FILLORDER_MSB2LSB
-    
-    /* Define to 1 if your processor stores words with the most significant byte
-    first (like Motorola and SPARC, unlike Intel and VAX). */
-    #define WORDS_BIGENDIAN 1
-#else
-    /* Set the native cpu bit order */
-    #define HOST_FILLORDER FILLORDER_LSB2MSB
-    
-    /* Define to 1 if your processor stores words with the most significant byte
-        first (like Motorola and SPARC, unlike Intel and VAX). */
-    /* #undef WORDS_BIGENDIAN */
-#endif
+/* Native cpu byte order: 1 if big-endian (Motorola) or 0 if little-endian
+   (Intel) */
+#define HOST_BIGENDIAN 0
 
-/* Define to `__inline__' or `__inline' if that's what the C compiler
-   calls it, or to nothing if 'inline' is not supported under any name.  */
-#ifndef __cplusplus
-# ifndef inline
-#  define inline __inline
-# endif
-#endif
+/* Set the native cpu bit order (FILLORDER_LSB2MSB or FILLORDER_MSB2LSB) */
+#define HOST_FILLORDER FILLORDER_LSB2MSB
 
 /* Support ISO JBIG compression (requires JBIG-KIT library) */
 /* #undef JBIG_SUPPORT */
@@ -209,6 +217,27 @@
 /* Support Old JPEG compresson (read-only) */
 /* #undef OJPEG_SUPPORT */
 
+/* Name of package */
+#define PACKAGE "tiff"
+
+/* Define to the address where bug reports for this package should be sent. */
+#define PACKAGE_BUGREPORT "tiff@lists.maptools.org"
+
+/* Define to the full name of this package. */
+#define PACKAGE_NAME "LibTIFF Software"
+
+/* Define to the full name and version of this package. */
+#define PACKAGE_STRING "LibTIFF Software 4.0.3"
+
+/* Define to the one symbol short name of this package. */
+#define PACKAGE_TARNAME "tiff"
+
+/* Define to the home page for this package. */
+#define PACKAGE_URL ""
+
+/* Define to the version of this package. */
+#define PACKAGE_VERSION "4.0.3"
+
 /* Support Macintosh PackBits algorithm */
 #define PACKBITS_SUPPORT 1
 
@@ -223,7 +252,7 @@
 #define SIZEOF_SIGNED_INT 4
 
 /* The size of `signed long', as computed by sizeof. */
-#define SIZEOF_SIGNED_LONG 4
+#define SIZEOF_SIGNED_LONG 8
 
 /* The size of `signed long long', as computed by sizeof. */
 #define SIZEOF_SIGNED_LONG_LONG 8
@@ -232,13 +261,13 @@
 #define SIZEOF_SIGNED_SHORT 2
 
 /* The size of `unsigned char *', as computed by sizeof. */
-#define SIZEOF_UNSIGNED_CHAR_P 4
+#define SIZEOF_UNSIGNED_CHAR_P 8
 
 /* The size of `unsigned int', as computed by sizeof. */
 #define SIZEOF_UNSIGNED_INT 4
 
 /* The size of `unsigned long', as computed by sizeof. */
-#define SIZEOF_UNSIGNED_LONG 4
+#define SIZEOF_UNSIGNED_LONG 8
 
 /* The size of `unsigned long long', as computed by sizeof. */
 #define SIZEOF_UNSIGNED_LONG_LONG 8
@@ -272,10 +301,10 @@
 #define TIFF_INT32_T signed int
 
 /* Signed 64-bit type formatter */
-#define TIFF_INT64_FORMAT "%lld"
+#define TIFF_INT64_FORMAT "%ld"
 
 /* Signed 64-bit type */
-#define TIFF_INT64_T signed long long
+#define TIFF_INT64_T signed long
 
 /* Signed 8-bit type */
 #define TIFF_INT8_T signed char
@@ -302,10 +331,10 @@
 #define TIFF_UINT32_T unsigned int
 
 /* Unsigned 64-bit type formatter */
-#define TIFF_UINT64_FORMAT "%llu"
+#define TIFF_UINT64_FORMAT "%lu"
 
 /* Unsigned 64-bit type */
-#define TIFF_UINT64_T unsigned long long
+#define TIFF_UINT64_T unsigned long
 
 /* Unsigned 8-bit type */
 #define TIFF_UINT8_T unsigned char
@@ -313,97 +342,55 @@
 /* Define to 1 if you can safely include both <sys/time.h> and <time.h>. */
 #define TIME_WITH_SYS_TIME 1
 
-#else /* __APPLE__ */
+/* Define to 1 if your <sys/time.h> declares `struct tm'. */
+/* #undef TM_IN_SYS_TIME */
 
-/* Define to 1 if you have the <assert.h> header file. */
-#define HAVE_ASSERT_H 1
+/* define to use win32 IO system */
+/* #undef USE_WIN32_FILEIO */
 
-/* Define to 1 if you have the <fcntl.h> header file. */
-#define HAVE_FCNTL_H 1
+/* Version number of package */
+#define VERSION "4.0.3"
 
-/* Define as 0 or 1 according to the floating point format suported by the
-   machine */
-#define HAVE_IEEEFP 1
+/* Define WORDS_BIGENDIAN to 1 if your processor stores words with the most
+   significant byte first (like Motorola and SPARC, unlike Intel). */
+#if defined AC_APPLE_UNIVERSAL_BUILD
+# if defined __BIG_ENDIAN__
+#  define WORDS_BIGENDIAN 1
+# endif
+#else
+# ifndef WORDS_BIGENDIAN
+/* #  undef WORDS_BIGENDIAN */
+# endif
+#endif
 
-/* Define to 1 if you have the `jbg_newlen' function. */
-#define HAVE_JBG_NEWLEN 1
+/* Define to 1 if the X Window System is missing or not being used. */
+/* #undef X_DISPLAY_MISSING */
 
-/* Define to 1 if you have the <string.h> header file. */
-#define HAVE_STRING_H 1
+/* Support Deflate compression */
+#define ZIP_SUPPORT 1
 
-/* Define to 1 if you have the <sys/types.h> header file. */
-#define HAVE_SYS_TYPES_H 1
+/* Enable large inode numbers on Mac OS X 10.5.  */
+#ifndef _DARWIN_USE_64_BIT_INODE
+# define _DARWIN_USE_64_BIT_INODE 1
+#endif
 
-/* Define to 1 if you have the <io.h> header file. */
-#define HAVE_IO_H 1
+/* Number of bits in a file offset, on hosts where this is settable. */
+/* #undef _FILE_OFFSET_BITS */
 
-/* Define to 1 if you have the <search.h> header file. */
-#define HAVE_SEARCH_H 1
+/* Define for large files, on AIX-style hosts. */
+/* #undef _LARGE_FILES */
 
-/* Define to 1 if you have the `setmode' function. */
-#define HAVE_SETMODE 1
-
-/* The size of a `int', as computed by sizeof. */
-#define SIZEOF_INT 4
-
-/* The size of a `long', as computed by sizeof. */
-#define SIZEOF_LONG 4
-
-/* Signed 64-bit type formatter */
-#define TIFF_INT64_FORMAT "%I64d"
-
-/* Signed 64-bit type */
-#define TIFF_INT64_T signed __int64
-
-/* Unsigned 64-bit type formatter */
-#define TIFF_UINT64_FORMAT "%I64u"
-
-/* Unsigned 64-bit type */
-#define TIFF_UINT64_T unsigned __int64
-
-/* Set the native cpu bit order */
-#define HOST_FILLORDER FILLORDER_LSB2MSB
-
-#define snprintf _snprintf
-
-/* Define to 1 if your processor stores words with the most significant byte
-   first (like Motorola and SPARC, unlike Intel and VAX). */
-/* #undef WORDS_BIGENDIAN */
+/* Define to empty if `const' does not conform to ANSI C. */
+/* #undef const */
 
 /* Define to `__inline__' or `__inline' if that's what the C compiler
    calls it, or to nothing if 'inline' is not supported under any name.  */
 #ifndef __cplusplus
-# ifndef inline
-#  define inline __inline
-# endif
+/* #undef inline */
 #endif
 
-#if !defined (__BORLANDC__) && !defined (__WATCOMC__)
-   #define lfind _lfind
-#endif
+/* Define to `long int' if <sys/types.h> does not define. */
+/* #undef off_t */
 
-#ifdef _WIN32_WCE
-#   undef HAVE_FCNTL_H
-#   undef HAVE_SYS_TYPES_H
-
-    /*
-       CE headers don't define these standard constants (not even underscored
-       versions), provide our own replacements as they seem to be only used in
-       libtiff own code anyhow.
-     */
-#   define   O_RDONLY    0x0000
-#   define   O_WRONLY    0x0001
-#   define   O_RDWR      0x0002
-#   define   O_CREAT     0x0100
-#   define   O_TRUNC     0x0200
-#   define   O_EXCL      0x0400
-#endif /* _WIN32_WCE */
-
-#endif /* __APPLE__/!__APPLE__ */
-/*
- * Local Variables:
- * mode: c
- * c-basic-offset: 8
- * fill-column: 78
- * End:
- */
+/* Define to `unsigned int' if <sys/types.h> does not define. */
+/* #undef size_t */
