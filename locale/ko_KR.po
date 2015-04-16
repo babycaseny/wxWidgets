@@ -96,19 +96,16 @@ msgstr "#9 봉투, 3 7/8 x 8 7/8 in"
 #: ../src/richtext/richtextsizepage.cpp:591
 #: ../src/richtext/richtextsizepage.cpp:626
 #: ../src/richtext/richtextsizepage.cpp:661
-#, fuzzy
 msgid "%"
-msgstr "%s"
+msgstr ""
 
 #: ../src/html/helpwnd.cpp:1031
-#, fuzzy, c-format
 msgid "%d of %lu"
-msgstr "%i / %i"
+msgstr "%d / %lu"
 
 #: ../src/html/helpwnd.cpp:1678
-#, fuzzy, c-format
 msgid "%i of %u"
-msgstr "%i / %i"
+msgstr "%i / %u"
 
 #: ../src/generic/filectrlg.cpp:315
 #, c-format
@@ -140,12 +137,12 @@ msgstr "정보 : %s"
 #: ../src/generic/preferencesg.cpp:115
 #, fuzzy, c-format
 msgid "%s Preferences"
-msgstr "설정(&P)"
+msgstr "%s 설정"
 
 #: ../src/generic/logg.cpp:232
 #, c-format
 msgid "%s Warning"
-msgstr "경고 : %s"
+msgstr "%s 경고"
 
 #: ../src/common/tarstrm.cpp:1319
 #, c-format
@@ -9144,11 +9141,12 @@ msgid "wxWidget's control not initialized."
 msgstr "모델 위치가 초기화 되지 않았습니다."
 
 #: ../src/motif/app.cpp:245
-#, c-format
+#, fuzzy, c-format
 msgid "wxWidgets could not open display for '%s': exiting."
 msgstr "wxWidgets: 디스플레이 '%s' 의 열기 실패. 종료합니다."
 
 #: ../src/x11/app.cpp:170
+#, fuzzy
 msgid "wxWidgets could not open display. Exiting."
 msgstr "wxWidgets: 디스플레이 열기 실패. 종료합니다."
 
